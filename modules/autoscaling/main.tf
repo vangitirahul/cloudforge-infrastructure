@@ -55,9 +55,9 @@ resource "aws_autoscaling_group" "this" {
 
   name = "cloudforge-asg"
 
-  desired_capacity = 2
+  desired_capacity = 0
 
-  min_size = 2
+  min_size = 0
 
   max_size = 4
 
