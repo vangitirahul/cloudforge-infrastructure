@@ -42,5 +42,16 @@ module "autoscaling" {
 
   instance_profile_name = module.iam.instance_profile_name
 
+  key_name = "cloudforge-key"
+
   target_group_arn = module.alb.target_group_arn
+}
+
+module "cloudwatch" {
+
+  source = "../../modules/cloudwatch"
+
+  notification_email = "vangitirahul2002@gmail.com"
+
+  autoscaling_group_name = module.autoscaling.autoscaling_group_name
 }

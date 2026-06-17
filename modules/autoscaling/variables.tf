@@ -17,3 +17,6 @@ variable "instance_profile_name" {
 variable "target_group_arn" {
   type = string
 }
+variable "key_name" {
+  type = string
+}

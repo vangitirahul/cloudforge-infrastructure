@@ -18,6 +18,8 @@ resource "aws_launch_template" "this" {
 
   instance_type = "t3.micro"
 
+  key_name = var.key_name
+
   vpc_security_group_ids = [
     var.ec2_security_group_id
   ]

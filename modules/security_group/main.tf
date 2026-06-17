@@ -11,6 +11,7 @@ resource "aws_security_group" "alb_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+
   ingress {
     description = "HTTPS"
     from_port   = 443
@@ -42,6 +43,19 @@ resource "aws_security_group" "ec2_sg" {
     to_port         = 80
     protocol        = "tcp"
     security_groups = [aws_security_group.alb_sg.id]
+  }
+
+  ingress {
+    description = "SSH"
+
+    from_port = 22
+    to_port   = 22
+
+    protocol = "tcp"
+
+    cidr_blocks = [
+      "106.192.5.26/32"
+    ]
   }
 
   egress {

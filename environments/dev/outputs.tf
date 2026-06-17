@@ -38,3 +38,10 @@ output "autoscaling_group_name" {
 output "launch_template_id" {
   value = module.autoscaling.launch_template_id
 }
+output "sns_topic_arn" {
+  value = module.cloudwatch.sns_topic_arn
+}
+
+output "alarm_name" {
+  value = module.cloudwatch.alarm_name
+}
