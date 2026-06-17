@@ -42,7 +42,7 @@ module "autoscaling" {
 
   instance_profile_name = module.iam.instance_profile_name
 
-  key_name = "cloudforge-key"
+  key_name = "cloudforge-key-v2"
 
   target_group_arn = module.alb.target_group_arn
 }
